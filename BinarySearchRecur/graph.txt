@@ -1,0 +1,7 @@
+set title "BINARY SEARCH"
+set xrange [-200: 1200]
+set yrange [-2: 15]
+set xlabel " Input Size(n)"
+set ylabel "Operational Count"
+set style data line
+plot "avg.txt" using 1:2 title "AVERAGE CASE", "best.txt" using 1:2 title "BEST CASE", "worst.txt" using 1:2 title "WORST CASE"
