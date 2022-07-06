@@ -1,0 +1,7 @@
+set title "BRUTE FORCE POLYNOMIAL EVALUATION"
+set xrange [-200: 1200]
+set yrange [-200: 1200]
+set xlabel " Input Size(n)"
+set ylabel "Operational Count"
+set style data line
+plot "count.txt" using 1:2 title ""
