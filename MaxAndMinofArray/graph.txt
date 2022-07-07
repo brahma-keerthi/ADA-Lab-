@@ -1,0 +1,7 @@
+set title "MAX AND MIN OF ARRAY"
+set xrange [-200: 1400]
+set yrange [-200: 1400]
+set xlabel " Input Size(n)"
+set ylabel "Operational Count"
+set style data line
+plot "countMax.txt" using 1:2 title "Count of Maximum", "countMin.txt" using 1:2 title "Count of Minimum"
