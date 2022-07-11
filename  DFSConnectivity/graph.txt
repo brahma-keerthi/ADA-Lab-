@@ -1,0 +1,7 @@
+set title "DFS Connectivity of graph"
+set xrange [-20: 140]
+set yrange [-2000: 14000]
+set xlabel " Input Size(n)"
+set ylabel "Operational Count"
+set style data line
+plot "count.txt" using 1:2 title ""
