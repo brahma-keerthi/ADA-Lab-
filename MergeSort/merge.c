@@ -4,33 +4,6 @@
 
 int count = 0;
 
-void worst(int arr[], int first, int last){
-    if (first < last){
-        int mid = (first + last)/2;
-
-        int left[mid - first + 1];
-        int right[last - mid];
-
-        // For taking alternate values
-        for(int i=0; i<mid - first + 1; i++)
-            left[i] = arr[2*i];
-
-        for(int i = 0; i<last - mid; i++)
-            right[i] = arr[2*i + 1];
-        // ----------------------------
-        worst(left, first, mid);
-        worst(right, mid+1, last);
-
-        // Joining splited array
-        int i, j;
-        for(i=0; i<mid-first+1; i++)
-            arr[i] = left[i];
-
-        for(j= 0; j<last - mid; j++)
-            arr[j+i] = right[j];
-    }
-}
-
 void merge(int arr[], int first, int mid, int last){
     int k = first;
     int n1 = mid - first + 1;
@@ -95,7 +68,12 @@ void main(){
         count = 0;
 
         // Worst case -> 1, 3, 5,7 , 2, 4, 6, 8
-        worst(arr, 0, n-1);
+        for(i = 0; i<n; i++){
+            if (i%2==0)
+                arr[i] = n-i;
+            else
+                arr[i] = i;
+        }
         divide(arr, 0, n-1);
         fprintf(w, "%d  %d\n", n, count);
         count = 0;
